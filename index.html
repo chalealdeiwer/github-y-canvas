@@ -9,11 +9,64 @@
 </head>
 
 <body>
-    <h1>Aqui va el dibujo
-    </h1>
-    <canvas id="canvas" width="300" height="300">
-        Tu navegador no admite el elemento &lt;canvas&gt;.
+    <h1>Aqui va el dibujo</h1>
+    <hr>
+    <canvas id="lnz" width="500" height="500">
+
+
     </canvas>
+
+    <script>
+        let lnz = document.getElementById("lnz");
+        let context = lnz.getContext("2d");
+
+        const centerX = lnz.width / 2;
+        const centerY = lnz.height / 2;
+        const X = 500;
+        const Y = 500;
+        const radius = 50;
+
+        //context.beginPath();
+        context.fillStyle = '#0077aa';
+        //context.strokeStyle = '#0077aa47';
+        context.lineWidth = 2;
+
+
+        //cabeza
+
+        //context.moveTo(centerX, 40);
+        context.arc(centerX, 40, 35, 0, 2 * Math.PI, false);
+
+        context.moveTo((centerX + 20), 40);
+        context.arc((centerX + 20), 40, 10, 0, 2 * Math.PI, false);
+
+        context.moveTo((centerX - 20), 40);
+        context.arc((centerX - 20), 40, 10, 0, 2 * Math.PI, false);
+
+
+        //torso
+        context.moveTo(centerX, 75);
+        context.lineTo(centerX, centerY);
+        //c.fillRect(10, 10, 40, 40);
+
+
+        //Piernas
+        context.moveTo(centerX, centerY);
+        context.lineTo(X, Y);
+        context.moveTo(centerX, centerY);
+        context.lineTo(0, Y);
+
+        //Brazos
+        context.moveTo(0, 150);
+        context.lineTo(X, 150);
+
+
+
+        context.stroke();
+
+
+
+    </script>
 </body>
 
 </html>
